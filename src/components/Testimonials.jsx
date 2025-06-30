@@ -11,21 +11,21 @@ const testimonials = [
     image: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    name: "Peter Onuoha",
+    name: "Peter Thompson",
     role: "Homeowner",
     feedback:
       "Their home cleaning service is top-notch. My house has never felt this fresh. I highly recommend them!",
     image: "https://randomuser.me/api/portraits/men/46.jpg",
   },
   {
-    name: "Chinyere Okafor",
+    name: "Helen Francis",
     role: "Garden Maintenance Subscriber",
     feedback:
       "They’ve turned my backyard into a paradise! Reliable and consistent — truly worth every naira.",
     image: "https://randomuser.me/api/portraits/women/65.jpg",
   },
   {
-    name: "Tunde Bello",
+    name: "Mark Larry",
     role: "Tyre & Engine Service User",
     feedback:
       "Very efficient tyre replacement and the engine cleaning gave my car a new life. Superb job!",
@@ -71,10 +71,13 @@ const CarouselWrapper = styled.div`
 const CarouselTrack = styled.div`
   display: flex;
   transition: transform 0.5s ease-in-out;
+  flex-wrap:wrap;
+   justify-content:center;
 
-  @media (max-width: 884px) {
+  @media (max-width: 428px) {
     flex-direction: column;
     align-items: center;
+   
     gap: 20px;
   }
 `;
@@ -86,6 +89,8 @@ const TestimonialCard = styled.div`
   box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
   width: 270px;
   margin: 0 10px;
+  margin-top:20px;
+  
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 

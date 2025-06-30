@@ -71,7 +71,7 @@ const VideoGallery = () => {
 
       <VideoBox>
         {/* <OverlayText>Making Impacts</OverlayText> */}
-        <StyledVideo src={video2} ref={videoRef} controls autoPlay muted loop />
+        <StyledVideo src={video2} controls autoPlay muted loop />
       </VideoBox>
     </VideoSection>
   );

@@ -9,6 +9,30 @@ import heroVideo4 from "../Images3/h1.mp4";
 import herobg from '../Images3/333.jpg'
 
 // Styled Components
+// const HeroContainer = styled.section`
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh;
+//   text-align: center;
+//   overflow: hidden;
+//   background-image:url(${herobg});
+//   background-size:cover;
+//   background-position:center;
+//   padding-top:60px;
+
+//   video {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// `;
+
+
 const HeroContainer = styled.section`
   position: relative;
   display: flex;
@@ -17,10 +41,21 @@ const HeroContainer = styled.section`
   height: 100vh;
   text-align: center;
   overflow: hidden;
-  background-image:url(${herobg});
-  background-size:cover;
-  background-position:center;
-  padding-top:60px;
+  background-image: url(${herobg});
+  background-size: cover;
+  background-position: center;
+  padding-top: 60px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Adjust opacity here */
+    z-index: 1;
+  }
 
   video {
     position: absolute;
@@ -29,8 +64,15 @@ const HeroContainer = styled.section`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
   }
 `;
+
 
 // Text Container
 const HeroText = styled.div`
@@ -55,7 +97,7 @@ const HeroTitle = styled.h1`
   }
 
   @media (max-width: 428px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   @keyframes flyInFromBottom {

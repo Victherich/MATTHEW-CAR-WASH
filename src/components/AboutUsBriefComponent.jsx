@@ -57,8 +57,8 @@ const AboutUsBrief = () => {
       <div className="about-us-brief-content">
         <div className="about-us-brief-text">
           <h2>🚀 ABOUT MCC</h2>
-          <p><strong style={{color:"#119458"}}>My Vision:</strong>"To create cleaner, safer, and more dignified environments for communities — where families, women, and children can thrive in cleanliness, comfort, and care."</p>
-          <p><strong style={{color:"#119458"}}>My Mission:</strong> "Our mission is to go beyond cleaning — to restore dignity and peace of mind by delivering exceptional car wash and cleaning services, supporting the well-being of women, young ladies, and children, and empowering lives through safety, hygiene, and hope."</p>
+          <p><strong style={{color:"#119458"}}>Our Vision:</strong>"To create cleaner, safer, and more dignified environments for communities — where families, women, and children can thrive in cleanliness, comfort, and care."</p>
+          <p><strong style={{color:"#119458"}}>Our Mission:</strong> "Our mission is to go beyond cleaning — to restore dignity and peace of mind by delivering exceptional car wash and cleaning services, supporting the well-being of women, young ladies, and children, and empowering lives through safety, hygiene, and hope."</p>
      
           <button className="more-about-btn" onClick={handleMoreClick}>
             Learn More
