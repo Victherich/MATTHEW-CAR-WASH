@@ -462,7 +462,7 @@ const BookingModal = ({ service, onClose, onSuccess }) => {
           await saveOrderToDatabase(orderDetails);
           await sendOrderEmails(orderDetails);
 
-          Swal.fire("Success", "Payment successful! Confirmation email sent.", "success");
+          Swal.fire("Success", "Payment successful! Confirmation email sent. Our team shall contact you soon. Thanks", "success");
           onSuccess && onSuccess(orderDetails);
           onClose();
         },

@@ -182,6 +182,7 @@ import Swal from "sweetalert2";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig"; // Ensure this path is correct
 import { onAuthStateChanged } from 'firebase/auth';
+import ForgotPasswordModal from "./ForgotPasswordModal";
 
 // --- Light Theme Colors for Login ---
 const lightLoginColors = {
@@ -286,6 +287,7 @@ const AdminLogin = () => {
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
   const [form, setForm] = useState({ email: "", password: "" });
+    const [showForgotPassword, setShowForgotPassword] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -366,11 +368,17 @@ const AdminLogin = () => {
           />
           <Button type="submit">Login</Button>
         </form>
-        {/* <RegisterText onClick={() => navigate("/adminforgotpassword")}>
-          Forgot Password
-        </RegisterText> */}
+   
+
+          <RegisterText onClick={() => setShowForgotPassword(true)}>
+          Forgot Password?
+        </RegisterText>
 
       </FormWrapper>
+
+       {showForgotPassword && (
+        <ForgotPasswordModal onClose={() => setShowForgotPassword(false)} />
+      )}
     </Container>
   );
 };
