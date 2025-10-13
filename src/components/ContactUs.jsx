@@ -9,22 +9,11 @@ import { Context } from "./Context";
 
 // Styled Components
 const PageWrapper = styled.div`
-  // font-family: Arial, sans-serif;
-  // background: #f9f9f9;
+
   background:rgba(0,0,255,0.1);
 `;
 
-// Hero Section
-// const HeroSection = styled.div`
-//   background: url(${bg}) center/cover no-repeat;
-//   color: white;
-//   text-align: center;
-//   padding: 150px 20px;
 
-//   @media(max-width:768px){
-//     padding-top: 200px;
-//   }
-// `;
 
 const HeroSection = styled.div`
   position: relative;

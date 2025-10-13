@@ -3,7 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import video1 from "../Images3/h3.mp4";
-import video2 from "../Images3/m1.mp4";
+import video2 from "../Images3/media1.mp4";
 
 const VideoSection = styled.section`
   padding: 60px 20px;
@@ -66,12 +66,12 @@ const VideoGallery = () => {
     <VideoSection>
       <VideoBox>
         {/* <OverlayText>Making Impacts</OverlayText> */}
-        <StyledVideo src={video1} controls autoPlay muted loop />
+        <StyledVideo src={video2} controls autoPlay muted loop />
       </VideoBox>
 
       <VideoBox>
         {/* <OverlayText>Making Impacts</OverlayText> */}
-        <StyledVideo src={video2} controls autoPlay muted loop />
+        <StyledVideo src={video1} controls autoPlay muted loop />
       </VideoBox>
     </VideoSection>
   );

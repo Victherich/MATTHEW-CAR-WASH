@@ -237,6 +237,7 @@ import ImageManager from './GalleryImageManager.jsx';
 import GalleryImageManager from './GalleryImageManager.jsx';
 import ServicesImageManager from './ServicesImageManager.jsx';
 import ManageVariableServices from './ManageVariableServices.jsx';
+import BookingsDashboard from './BookingsDashboard.jsx';
 
 // --- Light Theme Colors ---
 const lightColors = {
@@ -252,7 +253,7 @@ const lightColors = {
 
 // Styled Components
 const DashboardContainer = styled.div`
-padding-top:50px;
+// padding-top:50px;
   display: flex;
   min-height: 100vh;
   background-color: ${lightColors.mainBackground}; /* Light mode background */
@@ -423,6 +424,9 @@ const theme = useSelector(state=>state.theme)
       case 'profile':
         return <AdminProfile />;
       // Uncomment and ensure correct paths for these components when ready
+
+          case 'bookings':
+        return <BookingsDashboard/>;
       case 'hostinglist':
         return <HostingList />;
       case 'transactionslist':
@@ -477,7 +481,12 @@ const theme = useSelector(state=>state.theme)
             Hi, Admin
           </SidebarMenuItem>
           {/* Uncomment these menu items when their components are implemented */}
-          
+            <SidebarMenuItem
+            active={activeMenu === 'bookings'}
+            onClick={() => handleMenuClick('bookings')}
+          >
+            Bookings
+          </SidebarMenuItem>
           <SidebarMenuItem
             active={activeMenu === 'hostinglist'}
             onClick={() => handleMenuClick('hostinglist')}

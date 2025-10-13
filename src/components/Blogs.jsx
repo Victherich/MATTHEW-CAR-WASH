@@ -196,10 +196,10 @@ const MatthewBlog = () => {
     <Container>
       <BlogHeroSection>
         <BlogHeroTitle>
-          Tips & Stories from Matthew Car Wash
+          Tips & Stories from MACO
         </BlogHeroTitle>
         <BlogHeroSubtitle>
-          Discover expert car care advice, cleaning hacks, and behind-the-scenes stories from your trusted team at Matthew Car Wash & Cleaning Co.
+          Discover expert car care advice, cleaning hacks, and behind-the-scenes stories from your trusted team at MACO.
         </BlogHeroSubtitle>
       </BlogHeroSection>
 

@@ -418,7 +418,7 @@ const AboutPage = () => {
     </IconWrapper>
     <SectionTitle>Who We Are</SectionTitle>
     <SectionText>
-      At Matthew Car Wash and Cleaning Company, we are committed to redefining cleanliness and customer service excellence. With a passion for perfection and a heart for service, we deliver professional car wash, home cleaning, and maintenance solutions that leave lasting impressions. We aim to build trust, one clean space at a time.
+      At MACO, we are committed to redefining cleanliness and customer service excellence. With a passion for perfection and a heart for service, we deliver professional car wash, home cleaning, and maintenance solutions that leave lasting impressions. We aim to build trust, one clean space at a time.
     </SectionText>
   </SectionContainer>
 </Section>
@@ -432,7 +432,7 @@ const AboutPage = () => {
       </IconWrapper>
       <SectionTitle>Our Mission</SectionTitle>
       <SectionText>
-        To provide top-tier, eco-friendly cleaning and car care services that enhance everyday life, convenience, and comfort for our customers.
+        To provide top-tier, eco-friendly maintenance, cleaning and car care services that enhance everyday life, convenience, and comfort for our customers.
       </SectionText>
     </GridItem>
 
@@ -442,7 +442,7 @@ const AboutPage = () => {
       </IconWrapper>
       <SectionTitle>Our Vision</SectionTitle>
       <SectionText>
-        To become the region’s most trusted name in car wash and cleaning services—known for quality, reliability, and genuine care.
+        To become the region’s most trusted name in maintenance, car care and cleaning services—known for quality, reliability, and genuine care.
       </SectionText>
     </GridItem>
   </GridContainer>

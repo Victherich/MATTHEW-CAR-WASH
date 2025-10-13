@@ -16,7 +16,7 @@ const slideUp = keyframes`
 
 const MenuContainer = styled.div`
   position: fixed;
-  top: 70px;
+  top: 60px;
   right: 10px;
   z-index: 1000;
   

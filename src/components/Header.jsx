@@ -127,7 +127,7 @@
 
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import logo from '../Images3/MCCLOGO.png'
+import logo from '../Images3/logo.jpeg'
 import { useLocation, useNavigate } from "react-router-dom";
 
 const gradientAnimation = keyframes`
@@ -222,17 +222,25 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
 //   font-size: 22px;
 color:white;
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;  /* Increases space between letters */
+  // letter-spacing: 0.5rem;  /* Increases space between letters */
   word-spacing: 6px;    /* Increases space between words */
   // animation: ${gradientAnimation} 4s infinite alternate;
+  margin-left:10px;
+  cursor:pointer;
+  // font-style:italic;
 
 @media(max-width:884px){
       letter-spacing: 0.1rem;  /* Increases space between letters */
   word-spacing: 6px;    /* Increases space between words */
   font-weight:bold;
-  font-size:20px;
+  // font-size:20px;
+  margin-top:15px;
+}
+
+@media(max-width:428px){
+margin-top:5px;
 }
 
 `;
@@ -248,14 +256,14 @@ const MenuWrap = styled.div`
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:20px;
+  gap:40px;
   // margin-top:10px;
 
   p {
   cursor: pointer;
   color: white;
   font-weight: 500;
-  font-size:0.8rem;
+  font-size:0.9rem;
 
 
   &:hover {
@@ -278,8 +286,9 @@ const Header = () => {
   return (
     <HeaderWrap>
       <Logo src={logo} alt="Logo" onClick={()=>navigate('/')}/>
+        <Title onClick={()=>navigate('/')}>MACO</Title>
       <TitleContainer>
-        <Title>MATTHEW CAR WASH & CLEANING</Title>
+        
         <MenuWrap>
           <p onClick={()=>navigate('/')} style={{textDecoration:location.pathname==='/'?"underline":"", textDecorationThickness:"3px"}}>HOME</p>
           <p onClick={()=>navigate('/aboutus')} style={{textDecoration:location.pathname==='/aboutus'?"underline":""}}>ABOUT</p>
@@ -291,7 +300,7 @@ const Header = () => {
         </MenuWrap>
         {/* <Subtitle>(FOR COMMUNITY DEVELOPMENT AND STABILITY)</Subtitle> */}
       </TitleContainer>
-      <Logo2 src={logo} alt="NGO Logo" onClick={()=>navigate('/')}/>
+      {/* <Logo2 src={logo} alt="NGO Logo" onClick={()=>navigate('/')}/> */}
     </HeaderWrap>
   );
 };

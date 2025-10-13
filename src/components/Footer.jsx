@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import logo from "../Images3/MCCLOGO.png"; // Make sure the path to the logo is correct
+import logo from "../Images3/logo.jpeg"; // Make sure the path to the logo is correct
 import caccert from '../Images2/caccert.jpeg'
 import CacCert from "./CacCert";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
@@ -95,12 +95,12 @@ const Footer = () => {
      setIsVisible={setIsVisible}
      />
       {/* Logo */}
-      <FooterLogo src={logo} alt="Matthew car wash and cleaning" /><br/>
+      <FooterLogo src={logo} alt="MACO" /><br/>
       
       {/* <FooterLogo style={{width:"50px", cursor:"pointer"}} src={caccert} alt='caccert' onClick={()=>setIsVisible(true)}/>
       <p style={{fontSize:"0.7rem", fontStyle:"italic"}}>RN8343245</p> */}
       {/* Title */}
-      <FooterTitle>MATTHEW CAR WASH AND CLEANING</FooterTitle>
+      <FooterTitle>MACO</FooterTitle>
 
       <FooterText>
         <strong>Address: </strong>Royal class office number 493, DIP 1 
@@ -147,7 +147,7 @@ const Footer = () => {
       </FooterLinks>
 
       {/* Copyright */}
-      <Copyright>&copy; 2025 Matthew car wash and cleaning. All rights reserved.</Copyright>
+      <Copyright>&copy; 2025 MACO. All rights reserved.</Copyright>
     </FooterContainer>
   );
 };

@@ -283,7 +283,7 @@ import p2 from '../Images3/p3.png'
 import { useNavigate } from "react-router-dom";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import BookingModal from "./BookingPage"; // make sure this file exists
+import BookingModal from "./BookingModal"; // make sure this file exists
 import { db } from '../firebaseConfig'; // Import your Firestore instance
 import { collection, getDocs } from 'firebase/firestore'; // Import Firestore functions
 
@@ -450,6 +450,7 @@ const Services = () => {
        const [services2, setServices2] = useState([]); // State to store fetched services
     const [loading, setLoading] = useState(true); // Loading state
     const [error, setError] = useState(null); // Error state
+    const [showBooking, setShowBooking] = useState(false);
 
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedService, setSelectedService] = useState(null);
@@ -476,12 +477,12 @@ const Services = () => {
         fetchServices();
     }, []); // Empty dependency array means this runs once on mount
 
-    const openBookingPage = (service) => {
+//     const openBookingPage = (service) => {
     
-  // Save to localStorage
-  localStorage.setItem("selectedService", JSON.stringify(service));
-  navigate('/bookingpage')
-};
+//   // Save to localStorage
+//   localStorage.setItem("selectedService", JSON.stringify(service));
+//   navigate('/bookingpage')
+// };
 
 
     const closeModal = () => {
@@ -592,7 +593,7 @@ const Services = () => {
                                     <PriceItem>No packages listed.</PriceItem>
                                 )}
                             </PriceList>
-                            <Button onClick={() => openBookingPage(service)}>Book Now</Button>
+                            <Button onClick={() => {setShowBooking(true); setSelectedService(service)}}>Book Now</Button>
                         </Card>
                     ))}
                 </CardGrid>
@@ -624,7 +625,13 @@ const Services = () => {
                 </CardGrid>
             </Wrapper>
 
-          
+          {showBooking && (
+  <BookingModal
+    service={selectedService}
+    onClose={() => setShowBooking(false)}
+    onSuccess={(order) => console.log("Order success:", order)}
+  />
+)}
         </Section>
     );
 };

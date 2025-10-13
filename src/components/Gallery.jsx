@@ -452,12 +452,13 @@ const GalleryWrapper = styled.div`
   position: relative;
 //   background: linear-gradient(135deg, #ece9e6, #ffffff);
 background:rgba(0,0,255,0.1);
-  padding: 80px 20px;
+  // padding: 80px 20px;
   text-align: center;
   overflow: hidden;
+  padding-bottom:80px;
 
   @media(max-width:768px){
-    padding-top:10px;
+    // padding-top:10px;
   }
 `;
 

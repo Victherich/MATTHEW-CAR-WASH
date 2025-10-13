@@ -52,7 +52,7 @@ const LandingPage = () => {
       <Impact/>
       {/* <Events/> */}
 
-          <VideoGallery/>v
+          <VideoGallery/>
       <Services/>
       <Gallery/>
       {/* <GetInvolved/> */}
