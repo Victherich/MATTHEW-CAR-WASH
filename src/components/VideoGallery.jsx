@@ -8,7 +8,7 @@ import video2 from "../Images3/media1.mp4";
 const VideoSection = styled.section`
   padding: 60px 20px;
 //   background: #f0f4f8;
-background:#119458;
+background:#0CC1E0;;
   display: flex;
   gap: 30px;
   justify-content: center;

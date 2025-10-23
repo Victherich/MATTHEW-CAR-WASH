@@ -48,7 +48,7 @@
 // const Title = styled.h2`
 //   font-size: 38px;
 //   font-weight: 800;
-//   color: #0c5e36;
+//   color: #0CC1E0;;
 //   margin-bottom: 16px;
 // `;
 
@@ -58,7 +58,7 @@
 //   max-width: 800px;
 //   margin: 0 auto 60px;
 //   line-height: 1.7;
-//   color: #0c5e36;
+//   color: #0CC1E0;;
 // `;
 
 // const CardGrid = styled.div`
@@ -94,13 +94,13 @@
 // const ServiceTitle = styled.h3`
 //   font-size: 22px;
 //   font-weight: bold;
-//   color: #0c5e36;
+//   color: #0CC1E0;;
 //   margin-bottom: 10px;
 // `;
 
 // const ServiceText = styled.p`
 //   font-size: 15px;
-//   color: #0c5e36;
+//   color: #0CC1E0;;
 //   line-height: 1.6;
 //   margin-bottom: 15px;
 // `;
@@ -330,9 +330,11 @@ const Wrapper = styled.div`
 const Title = styled.h2`
   font-size: 38px;
   font-weight: 800;
-  color: #0c5e36;
+  color: #0CC1E0;
   margin-bottom: 16px;
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 1);
 `;
+
 
 const Description = styled.p`
   font-size: 17px;
@@ -340,7 +342,7 @@ const Description = styled.p`
   max-width: 800px;
   margin: 0 auto 60px;
   line-height: 1.7;
-  color: #0c5e36;
+  color: #333
 `;
 
 const CardGrid = styled.div`
@@ -377,13 +379,13 @@ const Image = styled.img`
 const ServiceTitle = styled.h3`
   font-size: 22px;
   font-weight: bold;
-  color: #0c5e36;
+  color: #0CC1E0;;
   margin-bottom: 10px;
 `;
 
 const ServiceText = styled.p`
   font-size: 15px;
-  color: #0c5e36;
+  color: #111;
   line-height: 1.6;
   margin-bottom: 15px;
 `;
@@ -399,16 +401,16 @@ const PriceList = styled.ul`
 const PriceItem = styled.li`
   font-size: 15px;
   // color: #119458;
-  color:#444;
-  font-weight: 600;
+  color:#111;
+  font-weight: 500;
   margin-bottom: 10px;
-  background-color:rgb(221, 253, 239);
+  background-color: #e2fbffff;;
   padding:5px;
   border-radius:5px;
 `;
 
 const Button = styled.button`
-  background: #119458;
+  background: #0CC1E0;
   color: white;
   border: none;
   padding: 10px 22px;
@@ -418,13 +420,13 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: #0e7a45;
+    background: gray;
   }
 `;
 
 const ServiceDescription = styled.p` /* Styled component for the main service description */
   font-size: 15px;
-  color: #0c5e36;
+  color: #111;
   line-height: 1.6;
   margin-bottom: 15px;
 `;
@@ -432,7 +434,7 @@ const ServiceDescription = styled.p` /* Styled component for the main service de
 
 const LoadingText = styled.p`
   font-size: 1.2rem;
-  color: #0c5e36;
+  color: #0CC1E0;;
   margin-top: 50px;
 `;
 
@@ -556,7 +558,7 @@ const Services = () => {
     return (
         <Section id="services">
             {/* Background shapes */}
-            <Shape size="200px" color="purple" top="20px" left="10%" />
+            {/* <Shape size="200px" color="purple" top="20px" left="10%" />
             <Shape size="160px" color="blue" top="100px" right="15%" rotate="45deg" />
             <Shape size="190px" color="pink" bottom="20%" left="8%" />
             <Shape size="170px" color="red" bottom="100px" right="12%" rotate="-30deg" />
@@ -564,7 +566,7 @@ const Services = () => {
             <Shape size="175px" color="orangered" bottom="15%" left="40%" rotate="20deg" />
             <Shape size="165px" color="green" top="80px" left="60%" />
             <Shape size="185px" color="aqua" bottom="50%" right="50%" />
-            <Shape size="185px" color="aqua" bottom="100px" right="5%" />
+            <Shape size="185px" color="aqua" bottom="100px" right="5%" /> */}
 
             <Wrapper>
                 <Title>Our Service Packages and Pricings</Title>

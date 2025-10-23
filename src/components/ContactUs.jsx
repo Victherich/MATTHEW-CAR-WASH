@@ -68,7 +68,7 @@ const FormContainer = styled.div`
 const FormTitle = styled.h2`
   text-align: center;
   margin-bottom: 20px;
-  color: #119458;
+  color: #0CC1E0;
 `;
 
 const FormInput = styled.input`
@@ -93,7 +93,7 @@ const FormTextArea = styled.textarea`
 `;
 
 const SubmitButton = styled.button`
-  background:#119458;
+  background:#0CC1E0;
   color: white;
   padding: 10px 20px;
   font-size: 16px;

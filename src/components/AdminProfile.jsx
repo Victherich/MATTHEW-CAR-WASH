@@ -13,12 +13,12 @@ const lightProfileColors = {
   pageBackground: '#F0F2F5',      // Very light gray for the overall page background
   cardBackground: '#FFFFFF',      // Pure white for the profile card
   cardBorder: '#E0E6ED',          // Soft light gray for card border
-  mainText: '#119458',            // Dark gray for general text
+  mainText: '#0CC1E0',            // Dark gray for general text
   secondaryText: '#666666',        // Medium gray for secondary info
-  accent: '#119458',              // A pleasant blue for highlights and active elements
+  accent: '#0CC1E0',              // A pleasant blue for highlights and active elements
   accentHover: '#3A7DCF',         // Darker blue for hover states
   avatarBackground: '#DDE6F0',    // Light gray-blue for avatar background
-  avatarText: '#119458',          // Accent blue for avatar text (initials)
+  avatarText: '#0CC1E0',          // Accent blue for avatar text (initials)
   inputBackground: '#F8FAFC',     // Off-white for input fields
   inputBorder: '#CBD5E1',         // Light gray for input borders
   inputTextColor: '#333333',      // Dark gray for input text
@@ -63,8 +63,8 @@ const AvatarWrap = styled.div`
 `;
 
 const Avatar = styled.div`
-  background-color: ${lightProfileColors.avatarBackground}; /* Light gray-blue avatar background */
-  color: ${lightProfileColors.avatarText}; /* Accent blue for avatar text */
+  background-color: #0CC1E0; /* Light gray-blue avatar background */
+  color: #FFDE59; /* Accent blue for avatar text */
   font-weight: bold;
   border-radius: 9999px;
   width: 60px; /* Slightly larger avatar */

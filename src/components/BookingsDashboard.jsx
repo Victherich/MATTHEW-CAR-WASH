@@ -294,7 +294,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  color: #0c5e36;
+  color:#0CC1E0;
   margin-bottom: 20px;
   text-align: center;
 `;
@@ -303,7 +303,7 @@ const SearchBar = styled.input`
   padding: 10px 15px;
   width: 100%;
   max-width: 500px;
-  border: 2px solid #119458;
+  border: 2px solid #0CC1E0;
   border-radius: 6px;
   outline: none;
   font-size: 16px;
@@ -404,6 +404,7 @@ const BookingsDashboard = () => {
   const [bookings, setBookings] = useState([]);
   const [search, setSearch] = useState("");
   const [filteredBookings, setFilteredBookings] = useState([]);
+  console.log(bookings)
 
   // Fetch bookings from Firestore
   useEffect(() => {
@@ -495,6 +496,12 @@ const BookingsDashboard = () => {
                 </p>
                 <p>
                   <Label>Price (AED):</Label> {b?.priceAED}
+                </p>
+                <p>
+                  <Label>Selected Date:</Label> {b?.selectedDate}
+                </p>
+                <p>
+                  <Label>Selected Time slot:</Label> {b?.selectedSlot}
                 </p>
                 <p>
                   <Label>

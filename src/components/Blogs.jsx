@@ -106,10 +106,10 @@ const ArticleImage = styled.img`
 `;
 
 const ArticleTitle = styled.h3`
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0.8rem;
-  color: #119458;
+  color: #0CC1E0;
 `;
 
 const ArticleExcerpt = styled.p`

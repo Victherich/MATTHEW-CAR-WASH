@@ -15,7 +15,7 @@ const Section = styled.section`
 `;
 
 const Title = styled.h2`
-  color: #119458; /* Darker, professional blue/gray for title */
+  color: #0CC1E0; /* Darker, professional blue/gray for title */
   font-size: 2rem; /* Slightly larger title */
   font-weight: 700; /* Bolder */
   text-align: center;
@@ -61,7 +61,7 @@ const Card = styled.div`
 `;
 
 const CardTitle = styled.h3`
-  color: #119458; /* Darker blue/gray for card titles */
+  color: #0CC1E0; /* Darker blue/gray for card titles */
   font-size: 1.6rem; /* Slightly larger card title */
   font-weight: 700;
   margin-bottom: 1.5rem; /* More space below the title */

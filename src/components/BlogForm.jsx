@@ -12,7 +12,7 @@ const adminThemeColors = {
   cardBorder: '#E0E6ED',
   mainText: '#333333',
   secondaryText: '#666666',
-  accent: ' #119458',
+  accent: ' #0CC1E0',
   accentHover: '#3A7DCF',
   cancelButtonBg: '#9DA6B2',
   cancelButtonHover: '#7F8C9A',

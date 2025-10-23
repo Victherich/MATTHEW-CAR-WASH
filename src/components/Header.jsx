@@ -152,14 +152,14 @@ const rotateAnimation = keyframes`
 //   100% { color: #5f27cd; }  /* Royal Purple */
 // `;
 
-
+// #FFDE59
 const HeaderWrap = styled.header`
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   // background: #000080;
-  background: #119458;
+  background: #0CC1E0;;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;

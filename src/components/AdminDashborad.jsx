@@ -245,7 +245,7 @@ const lightColors = {
   sidebarBackground: '#E9EDF2',    // Slightly darker light blue-gray for sidebar
   mainText: '#333333',             // Soft dark gray for general text
   secondaryText: '#666666',         // Medium gray for secondary text/inactive items
-  accent: '#119458',               // A pleasant, not-too-bright blue for accents/active
+  accent: '#0CC1E0',               // A pleasant, not-too-bright blue for accents/active
   accentHover: '#3A7DCF',          // Darker blue for hover states
   activeItemBg: '#DDE6F0',         // Light gray-blue for active sidebar item background
   border: '#D1D9E0',               // Light gray for borders and dividers

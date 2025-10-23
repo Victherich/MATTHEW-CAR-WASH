@@ -42,9 +42,10 @@ const CarouselSection = styled.section`
 const Title = styled.h2`
   font-size: 42px;
   font-weight: 900;
-  color: #0c5e36;
+  color: #0CC1E0;
   margin-bottom: 16px;
   text-transform: uppercase;
+   text-shadow: 2px 2px 6px rgba(255, 255, 255, 1);
 
   @media (max-width: 428px) {
     font-size: 2rem;
@@ -53,7 +54,7 @@ const Title = styled.h2`
 
 const Subtitle = styled.p`
   font-size: 18px;
-  color: #119458;
+  color: #333;
   margin-bottom: 60px;
   font-weight: 500;
   line-height: 1.7;
@@ -112,7 +113,7 @@ const ProfileImage = styled.img`
 const Name = styled.h3`
   font-size: 20px;
   font-weight: 700;
-  color: #0c5e36;
+  color: #0CC1E0;
   margin-bottom: 5px;
 `;
 

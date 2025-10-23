@@ -14,11 +14,11 @@ const adminThemeColors = {
   cardBorder: '#E0E6ED',           // Soft light gray for borders
   mainText: '#333333',             // Soft dark gray for general text
   secondaryText: '#666666',         // Medium gray for secondary text
-  accent: '#119458',               // A pleasant, not-too-bright blue for accents
+  accent: '#0CC1E0',               // A pleasant, not-too-bright blue for accents
   accentHover: '#3A7DCF',          // Darker blue for hover states
   danger: '#E74C3C',               // Red for delete actions
   dangerHover: '#C0392B',          // Darker red for delete hover
-  headerColor: '#119458',          // Darker title color
+  headerColor: '#0CC1E0',          // Darker title color
 };
 
 // --- Styled Components ---

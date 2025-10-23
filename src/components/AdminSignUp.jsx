@@ -13,18 +13,18 @@ const lightSignupColors = {
   mainBackground: '#F0F2F5',      // Very light gray for the overall page background
   formBackground: '#FFFFFF',      // Pure white for the form wrapper
   formBorder: '#E0E6ED',          // Soft light gray for form border
-  titleColor: '#119458',          // A pleasant blue for the title (matches accent from dashboard)
+  titleColor: '#0CC1E0',          // A pleasant blue for the title (matches accent from dashboard)
   labelColor: '#5C6F8D',          // Muted blue-gray for labels
   inputBackground: '#F8FAFC',     // Off-white for input fields
   inputBorder: '#CBD5E1',         // Light gray for input borders
   inputText: '#333333',           // Dark gray for input text
   inputFocusBorder: '#4A90E2',    // Accent blue for input focus border
   inputPlaceholder: '#9DA6B2',    // Soft gray for placeholder text
-  buttonBackground: '#119458',    // Accent blue for buttons
+  buttonBackground: '#0CC1E0',    // Accent blue for buttons
   buttonText: '#FFFFFF',          // White text on button
   buttonHover: '#3A7DCF',         // Darker blue for button hover
   linkText: '#5C6F8D',            // Muted blue-gray for link text
-  linkHover: '#119458',           // Accent blue for link text hover
+  linkHover: '#0CC1E0',           // Accent blue for link text hover
 };
 
 const Container = styled.div`

@@ -25,12 +25,12 @@
     /* max-width: 600px; */
     width: 50%;
     padding: 20px;
-    animation: fadeInLeft 1.2s ease-in-out;
+    /* animation: fadeInLeft 1.2s ease-in-out; */
   }
   
   .about-us-brief-text h2 {
     font-size: 2rem;
-    color: #119458;
+    color: #0CC1E0;;
     margin-bottom: 20px;
   }
   
@@ -58,7 +58,7 @@
     padding: 10px 20px;
     font-size: 1rem;
     color: white;
-    background-color: #119458;
+    background-color: #0CC1E0;;
     border: none;
     border-radius: 5px;
     cursor: pointer;

@@ -337,7 +337,7 @@ const SectionContainer = styled.div`
 
 const SectionTitle = styled.h2`
   font-size: 32px;
-  color: #119458;
+  color: #0CC1E0;
   margin-bottom: 20px;
 `;
 
@@ -350,7 +350,7 @@ const SectionText = styled.p`
 
 const IconWrapper = styled.div`
   font-size: 50px;
-  color: #119458;
+  color: #0CC1E0;
   margin-bottom: 15px;
 `;
 
