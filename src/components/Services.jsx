@@ -631,7 +631,7 @@ const Services = () => {
   <BookingModal
     service={selectedService}
     onClose={() => setShowBooking(false)}
-    onSuccess={(order) => console.log("Order success:", order)}
+  
   />
 )}
         </Section>

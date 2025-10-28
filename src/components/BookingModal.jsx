@@ -386,18 +386,21 @@ const BookingModal = ({ service, onClose, onSuccess }) => {
             selectedPackage,
             selectedDate,
             selectedSlot,
-            sellerEmail: "matthewcarwashandcleaning20@gmail.com",
+            sellerEmail: "matthewcarwashandcleaning@gmail.com",
             priceAED: selectedPackage.price,
             priceUSD: extractAmount(selectedPackage),
             paymentDetails: details,
             date: new Date().toISOString(),
+            paymentStatus:"PAID"
           };
 
           await saveOrderToDatabase(orderDetails);
           await sendOrderEmails(orderDetails);
-          Swal.fire("Success", "Booking confirmed! We'll contact you soon, Please check your email for confirmation. Thanks", "success");
-          onSuccess && onSuccess(orderDetails);
-          onClose();
+            Swal.fire({title:"Success!",
+      text:"Booking confirmed! We'll contact you soon. Please check your email for confirmation.",
+      icon:"success",
+      allowOutsideClick:false
+  }); onClose();
         },
         onError: (err) => {
           console.error("PayPal error:", err);
@@ -407,7 +410,74 @@ const BookingModal = ({ service, onClose, onSuccess }) => {
     }
   }, [showPayPal, selectedPackage]);
 
+
+
+
+
+const handleCOD = async () => {
+  if (!selectedPackage?.name)
+    return Swal.fire("Select a Package", "Please choose a package first.", "warning");
+
+  if (!userData.name || !userData.email || !userData.phone)
+    return Swal.fire("Missing Details", "Please fill in all user details.", "warning");
+
+  if (!selectedDate)
+    return Swal.fire("Select Date", "Please select a preferred date.", "warning");
+
+  if (!selectedSlot)
+    return Swal.fire("Select Time Slot", "Please choose a time slot.", "warning");
+
+  // ✅ Confirmation before booking
+  const confirmResult = await Swal.fire({
+    title: "Confirm Booking?",
+    text: `You are about to book "${service?.title}" for ${selectedDate} (${selectedSlot}).`,
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#0CC1E0",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, confirm booking",
+    cancelButtonText: "Cancel",
+  });
+
+  if (!confirmResult.isConfirmed) return; // ❌ Exit if user cancels
+
+  // ✅ Proceed with booking
+  const orderDetails = {
+    user: userData,
+    serviceTitle: service?.title,
+    selectedPackage,
+    selectedDate,
+    selectedSlot,
+    sellerEmail: "matthewcarwashandcleaning20@gmail.com",
+    priceAED: selectedPackage.price,
+    priceUSD: extractAmount(selectedPackage),
+    paymentDetails: "NULL",
+    date: new Date().toISOString(),
+    paymentStatus: "NOT YET PAID",
+  };
+
+  try {
+    await saveOrderToDatabase(orderDetails);
+    await sendOrderEmails(orderDetails);
+        onClose();
+    Swal.fire({title:"Success!",
+      text:"Booking confirmed! We'll contact you soon. Please check your email for confirmation.",
+      icon:"success",
+      allowOutsideClick:false
+  });
+  } catch (error) {
+    console.error("Booking failed:", error);
+    Swal.fire("Error", "Something went wrong while saving your booking.", "error");
+  }
+};
+
+
+
+
   const saveOrderToDatabase = async (order) => {
+Swal.fire({text:"Please wait..."})
+Swal.showLoading();
+
     try {
       await addDoc(collection(db, "orders"), { ...order, createdAt: serverTimestamp() });
     } catch (error) {
@@ -468,6 +538,7 @@ const BookingModal = ({ service, onClose, onSuccess }) => {
 
         {!showPayPal && (
           <Actions>
+              <Button onClick={handleCOD}>Payment on Delivery</Button>
             <Button onClick={handleProceedToPay}>Proceed to Pay</Button>
             <Button secondary onClick={onClose}>Cancel</Button>
           </Actions>
