@@ -467,20 +467,111 @@ const BookingsDashboard = () => {
     setFilteredBookings(filtered);
   }, [search, bookings]);
 
-  const handleStatusChange = async (id, newStatus) => {
-    try {
-      await updateDoc(doc(db, "orders", id), { status: newStatus });
-      setBookings((prev) =>
-        prev.map((b) => (b.id === id ? { ...b, status: newStatus } : b))
-      );
-      Swal.fire("Updated!", `Booking marked as ${newStatus}.`, "success");
-    } catch (error) {
-      console.error("Error updating status:", error);
-      Swal.fire("Error", "Failed to update booking status.", "error");
-    }
-  };
 
-// ✅ Handle payment update with confirmation
+
+//   const handleStatusChange = async (id, newStatus) => {
+//     try {
+//       await updateDoc(doc(db, "orders", id), { status: newStatus });
+//       setBookings((prev) =>
+//         prev.map((b) => (b.id === id ? { ...b, status: newStatus } : b))
+//       );
+//       Swal.fire("Updated!", `Booking marked as ${newStatus}.`, "success");
+
+//     } catch (error) {
+//       console.error("Error updating status:", error);
+//       Swal.fire("Error", "Failed to update booking status.", "error");
+//     }
+//   };
+
+
+
+// // ✅ Handle payment update with confirmation
+// const handleMarkAsPaid = async (id) => {
+//   const result = await Swal.fire({
+//     title: "Mark as Paid?",
+//     text: "Are you sure you want to mark this booking as PAID?",
+//     icon: "warning",
+//     showCancelButton: true,
+//     confirmButtonColor: "#0CC1E0",
+//     cancelButtonColor: "#d33",
+//     confirmButtonText: "Yes, mark as Paid",
+//     cancelButtonText: "Cancel",
+//   });
+
+//   if (result.isConfirmed) {
+//     try {
+//       await updateDoc(doc(db, "orders", id), { paymentStatus: "PAID" });
+//       setBookings((prev) =>
+//         prev.map((b) =>
+//           b.id === id ? { ...b, paymentStatus: "PAID" } : b
+//         )
+//       );
+//       Swal.fire("Success!", "Payment has been marked as PAID.", "success");
+//     } catch (error) {
+//       console.error("Error updating payment status:", error);
+//       Swal.fire("Error", "Failed to update payment status.", "error");
+//     }
+//   }
+// };
+
+
+
+
+
+// === Handle Booking Status Change ===
+const handleStatusChange = async (id, newStatus) => {
+  const result = await Swal.fire({
+    title: "Confirm Status Change",
+    text: `Are you sure you want to change this booking's status to "${newStatus}"?`,
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#0CC1E0",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, update it",
+    cancelButtonText: "Cancel",
+  });
+
+  if (!result.isConfirmed) return; // 🚫 Cancelled
+
+  Swal.fire({text:"Please wait..."});
+  Swal.showLoading();
+
+  try {
+
+    // 1️⃣ Update Firestore booking status
+    await updateDoc(doc(db, "orders", id), { status: newStatus });
+
+    // 2️⃣ Update local state
+    setBookings((prev) =>
+      prev.map((b) => (b.id === id ? { ...b, status: newStatus } : b))
+    );
+
+    Swal.fire("Updated!", `Booking marked as ${newStatus}.`, "success");
+
+    // 3️⃣ Send email notification
+    const updatedBooking = bookings.find((b) => b.id === id);
+    if (updatedBooking) {
+      await fetch("https://backend-mailer-1.vercel.app/api/matthew_booking_status_email_sender", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...updatedBooking,
+          status: newStatus, // ensure latest status
+          sellerEmail:"matthewcarwashandcleaning20@gmail.com",
+        }),
+      });
+    }
+  } catch (error) {
+    console.error("Error updating status:", error);
+    Swal.fire("Error", "Failed to update booking status.", "error");
+  }
+};
+
+
+
+
+
+// === Handle Payment Mark as Paid ===
 const handleMarkAsPaid = async (id) => {
   const result = await Swal.fire({
     title: "Mark as Paid?",
@@ -493,21 +584,45 @@ const handleMarkAsPaid = async (id) => {
     cancelButtonText: "Cancel",
   });
 
-  if (result.isConfirmed) {
-    try {
-      await updateDoc(doc(db, "orders", id), { paymentStatus: "PAID" });
-      setBookings((prev) =>
-        prev.map((b) =>
-          b.id === id ? { ...b, paymentStatus: "PAID" } : b
-        )
-      );
-      Swal.fire("Success!", "Payment has been marked as PAID.", "success");
-    } catch (error) {
-      console.error("Error updating payment status:", error);
-      Swal.fire("Error", "Failed to update payment status.", "error");
+  if (!result.isConfirmed) return; // 🚫 Cancelled
+
+
+    Swal.fire({text:"Please wait..."});
+  Swal.showLoading();
+
+  try {
+    // 1️⃣ Update payment status in Firestore
+    await updateDoc(doc(db, "orders", id), { paymentStatus: "PAID" });
+
+    // 2️⃣ Update local state
+    setBookings((prev) =>
+      prev.map((b) =>
+        b.id === id ? { ...b, paymentStatus: "PAID" } : b
+      )
+    );
+
+    Swal.fire("Success!", "Payment has been marked as PAID.", "success");
+
+    // 3️⃣ Send email notification
+    const updatedBooking = bookings.find((b) => b.id === id);
+    if (updatedBooking) {
+      await fetch("https://backend-mailer-1.vercel.app/api/matthew_booking_status_email_sender", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...updatedBooking,
+          paymentStatus: "PAID",
+          sellerEmail: "matthewcarwashandcleaning20@gmail.com",
+        }),
+      });
     }
+  } catch (error) {
+    console.error("Error updating payment status:", error);
+    Swal.fire("Error", "Failed to update payment status.", "error");
   }
 };
+
+
 
 
   return (
