@@ -150,6 +150,7 @@ const Footer = () => {
   
         <a href="/blogs">Blogs</a>
         <a href="/contactus">Contact Us</a>
+        <a href='/privacypolicy'>Privacy Policy</a>
       </FooterLinks>
 
       {/* Copyright */}

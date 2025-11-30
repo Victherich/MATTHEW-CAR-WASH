@@ -29,6 +29,7 @@ import AdminResetPassword from './components/AdminResetPassword';
 
 import GoogleTranslate from './components/GoogleTranslate';
 import BookingPage from './components/BookingModal';
+import PrivacyPolicy from './components/PrivacyPolicy.jsx';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
         <Route path='/inecengagement' element={<INECEngagement/>}/>
         <Route path='/blog/:articleId' element={<ArticleDetail/>}/>
         {/* <Route path='/bookingpage' element={<BookingPage/>}/> */}
+        <Route path='/privacypolicy' element={<PrivacyPolicy/>}/>
 
 
    {/* Admin routes */}
